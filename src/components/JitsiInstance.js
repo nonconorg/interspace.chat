@@ -7,7 +7,6 @@ import styled from "styled-components";
 const JitsiMeetExternalAPI = window.JitsiMeetExternalAPI;
 
 const JitsiContainer = styled.div`
-  padding-top: 5rem;
   width: 100vw;
 `;
 

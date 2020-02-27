@@ -12,12 +12,12 @@ const Space = () => {
     padding: 1rem;
   `;
 
-  const SpaceSelector = styled.nav`
-    padding-top: 1rem;
-  `;
+  const SpaceSelector = styled.nav``;
 
   const RedLine = styled.hr`
     border-color: red;
+    padding: 0;
+    margin: 0;
   `;
 
   const Room = ({ roomName, active }) => (
