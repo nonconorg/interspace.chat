@@ -1,33 +1,23 @@
-import React, { useContext } from "react";
-import { SpaceContext } from "../contexts/SpaceContext";
+import React from "react";
 import styled from "styled-components";
+import Room from './Room';
+
+const Header = styled.img`
+  width: 50vw;
+  height: auto;
+  margin: 0 auto;
+  padding: 1rem;
+`;
+
+const SpaceSelector = styled.nav``;
+
+const RedLine = styled.hr`
+  border-color: red;
+  padding: 0;
+  margin: 0;
+`;
 
 const Space = () => {
-  const { currentSpace, setSpace } = useContext(SpaceContext);
-
-  const Header = styled.img`
-    width: 50vw;
-    height: auto;
-    margin: 0 auto;
-    padding: 1rem;
-  `;
-
-  const SpaceSelector = styled.nav``;
-
-  const RedLine = styled.hr`
-    border-color: red;
-    padding: 0;
-    margin: 0;
-  `;
-
-  const Room = ({ roomName, active }) => (
-    <div className="click-zone" onClick={() => setSpace(roomName)}>
-      <span className={`roomFont ${currentSpace === roomName ? "active" : ""}`}>
-        {roomName}
-      </span>
-    </div>
-  );
-
   return (
     <SpaceSelector>
       <Header src="interspace-noncon-header.png" />
