@@ -1,40 +1,40 @@
-import React, { useEffect, useContext } from "react";
-import { SpaceContext } from "../contexts/SpaceContext";
+import React, { useEffect, useContext } from 'react';
+import { SpaceContext } from '../contexts/SpaceContext';
 // import { UserContext } from "../contexts/UserContext";
-import styled from "styled-components";
+import styled from 'styled-components';
 // import * as JitsiMeetExternalAPI from "../dist/jitsi";
 
 const JitsiMeetExternalAPI = window.JitsiMeetExternalAPI;
 
 const JitsiContainer = styled.div`
-  width: 100vw;
+	width: 100vw;
 `;
 
 const JitsiInstance = () => {
-  const { currentSpace } = useContext(SpaceContext);
-  // const { user } = useContext(UserContext);
+	const { currentSpace } = useContext(SpaceContext);
+	// const { user } = useContext(UserContext);
 
-  //  const width = 1024;
-  const height = 700;
+	//  const width = 1024;
+	const height = 700;
 
-  useEffect(() => {
-    const domain = "interspace.geleeroyale.work/noncon";
-    const options = {
-      roomName: currentSpace,
-      //     width: width,
-      height: height,
-      parentNode: document.querySelector("#meet")
-    };
-    const api = new JitsiMeetExternalAPI(domain, options);
+	useEffect(() => {
+		const domain = 'interspace.geleeroyale.work';
+		const options = {
+			roomName: currentSpace,
+			//     width: width,
+			height: height,
+			parentNode: document.querySelector('#meet')
+		};
+		const api = new JitsiMeetExternalAPI(domain, options);
 
-    //    api.executeCommand("displayName", user);
+		//    api.executeCommand("displayName", user);
 
-    return function cleanup() {
-      api.dispose();
-    };
-  });
+		return function cleanup() {
+			api.dispose();
+		};
+	});
 
-  return <JitsiContainer id="meet"></JitsiContainer>;
+	return <JitsiContainer id='meet'></JitsiContainer>;
 };
 
 export default JitsiInstance;
